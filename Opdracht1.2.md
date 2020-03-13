@@ -1,7 +1,6 @@
 # Browser Technologies
 ## Opdracht 1.2 - Fork je OBA
 
-
 ### Doel van deze opdracht
 Het doel van de deze opdracht is leren hoe je een website kan testen in verschillende browsers en devices, en hoe een screenreader werkt.
 
