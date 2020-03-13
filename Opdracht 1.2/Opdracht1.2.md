@@ -36,13 +36,11 @@ De applicatie werkt op deze Apple iPod touch ook niet. Er wordt geen JavaScript 
 Ook het renderen van de website gaat niet zoals bedoeld is. Dit heeft hoogstwaarschijnlijk te maken met flex en grid. Die niet worden ondersteund.
 
 ### Browsers
-![browsers](https://www.maxthon.com/blog/wp-content/uploads/2012/09/maxthon-3-surpasses-safari-on-european-economic-council-browser-ballot-joins-opera-google-chrome-firefox-and-microsoft-internet-explorer-on-the-first-page-1024x576.png)
 De browsers waarmee ik de verschillende features ga testen zijn:
 * Firefox
 * Chrome (Standaard & Development)
 * Safari
 * Brave
-* Opera
 
 #### Device
 Bovenstaande browsers zijn geinstalleerd op het volgende systeem:
@@ -93,30 +91,7 @@ Grid wordt ondersteund in firefox. De items in het gridschalen mee en dat is exa
 Terugnavigeren ondanks de routing met JavaScript doet het prima. 
 
 * Hover state
-Hover states werken naar behoren. CSS transities worden ondersteund en properties worden goed ingeladen en aangepast.
-
-#### Opera
-* Routing
-Routing werkt niet als je terug wilt in opera. Dit moet dus opgelost worden.
-
-* JavaScript Fetch
-Werkt goed
-
-* CSS
-Geen vreemde dingen gezien. Ziet er goed uit.
-
-* Flexbox
-Navigatie flext prima mee.
-
-* Grid
-Grid schaalt ook goed mee.
-
-* History state
-Dit werkt dus niet zo goed.
-
-* Hover state
-Werkt prima.
-
+Hover states werken naar behoren. CSS transaities worden ondersteund en properties worden goed ingeladen en aangepast.
 
 #### Safari
 * Routing
@@ -177,56 +152,11 @@ Met voice-over is het mogelijk om door de website te navigeren met de volgende t
 * Shift-Tab om naar het vorige navigatie/focus element te gaan
 * Enter om naar de href te navigeren van een element
 * Control + Options + Spatie om voice over de instructie te geven om een element te activeren.
-* Ik maak gebruik van lijsten in mijn applicatie en dat bevorderd de tab index en het opnoemen van de elementen enorm.
 
 ## Oplossingen en verbeteringen
-### Voice
 Ik zou mijn applicatie kunnen verbeteren op voice op de volgende punten:
 * Het ondersteunen van arrowkeys
 * Het ondersteunen van goede alt text op afbeeldingen
 * Het gebruiken van inline html afbeeldingen in plaats van css afbeeldingen die een achtergrond vormen.
 * Een skip to content sectie zodat je niet telkens door de navigatie heen hoeft te scrollen.
-* HTML semantiek sterk doorvoeren
-* Headinglevels moeten goede omschrijvingen hebben van de content die ze representeren
-* Sommige screenreaders hebben een optie om alleen alle links op een pagina op te noemen. Het is dus belangerijk om gewoon een anchor tag te gebruiken in plaat van een button als dat niet nodig is. Tevens moet de Anchor tag voorzien zijn van een normale beschrijving. Dus geen 'klik hier'
-* Omdat screenreaders van boven naar onder werken van links naar rechts. Ben je snel geneigd om met tab indices te werken maar dat is in essentie een bad practice omdat je hier mee het native HTML gedrag beinvloedt. Wat beter is is om de belangerijke content bovenaan te plaatsen zodat deze zo dicht mogelijk aan het begin van het bereik van een screenreader ligt.
-* De conclusie/kernzin van een paragraaf altijd aan het begin van de paragraaf schrijven. Zo weet iemand die een screenreader gebruikt gelijk of hij de content interessant of saai vindt.
-* Page titels. Het schrijven van een titel is een kleine moeite. Maar absoluut geen overbodige luxe voor mensen die screenreaders gebruiker.
-
-### Browser Support
-Er zijn ontzettend veel verschillende browsers. En sommige heb ik nog niet eens getest. Sommige browsers zijn gebasseerd op Chromium. Wat de backbone is van Google Chrome. Je ziet dan ook dat veel dingen op dezelfde manier gerendered worden zoals ik dat in Chrome gewend ben. Maar niet elke browsers werkt op die manier!
-
-Internet Explorer is bijvoorbeeld een browser die veel css properties niet ondersteund. Of anders interpeteert dan Chromium browsers.
-
-Om daar rekening mee te houden is het voor JavaScript development sowieso goed om te kijken of JavaScript ondersteunt wordt. En welke ECMAscript versie gehanteerd wordt.
-
-Op MDN en Can I Use This staat altijd goed beschreven hoe iets van JavaScript toegepast kan worden en welke browsers het supporten.
-
-Je kunt bijvoorbeeld kijken of de fetch method ondersteunt wordt in een browser.
-
-Maar datzelfde geldt ook voor CSS!
-
-Op de website van Can I use this kun je ook kijken of een bepaalde CSS property ondersteund wordt.
-[MDN](https://developer.mozilla.org/nl/)
-[Can I use this.com](https://caniuse.com/)
-
-#### Verbeteringen
-Ik denk dat het belangerijk is om goed te kijken welke properties er door het gross van de browsers gesupport wordt. Ik ben zelf een voorstander van het ontwikkelen voor de grotere browsers. Maar ik kan begrijpen dat voor sommige doeleinden het belangerijk is om te ontwikkelen voor minderen browsers.
-
-Om de applicatie te optimaliseren heb ik een lijst opgesteld van wat ik met de OBA applicatie beter kan doen:
-
-* Fallback Fonts
-* Fallback CSS
-* Reset CSS bovenaan CSS file
-* Fallback schrijven voor Flex en Grid
-* Deep diven in routing zodat dit beschikbaar is voor elke browser.
-* JavaScript eventueel in ES5 schrijven voor een bredere support
-* JavaScript als progressive enhancement gebruiken en niet als fundering van de website.
-* Semantiek voorop. Opletten met bepaalde HTML5 tags. Sommige tags worden namelijk standaard omgezet naar div's in IE. Wat weer betekend dat je CSS zou breken.
-* Classes en ID's gebruiken om bovenstaande zo veel mogelijk te voorkomen.
-* Afbeeldingen in HTML inladen en niet via de CSS als background.
-* History State optimaliseren/ aanspreken in alle browsers.
-
-
-
 
