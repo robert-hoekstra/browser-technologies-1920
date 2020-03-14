@@ -1,6 +1,65 @@
 # Browser Technologies
 ## Opdracht 1.2 - Fork je OBA
 
+## Inhoudsopgave
+- [Browser Technologies](#browser-technologies)
+  * [Opdracht 1.2 - Fork je OBA](#opdracht-12---fork-je-oba)
+    + [Doel van deze opdracht](#doel-van-deze-opdracht)
+    + [Uitleg](#uitleg)
+    + [Devices](#devices)
+      - [HTC Nexus 9](#htc-nexus-9)
+      - [Nokia Lumia 620](#nokia-lumia-620)
+      - [Apple iPod Touch](#apple-ipod-touch)
+    + [Browsers](#browsers)
+      - [Device](#device)
+    + [Features](#features)
+      - [Chrome (8 features)](#chrome--8-features-)
+        * [Afbeeldingen uitzetten](#afbeeldingen-uitzetten)
+        * [Custom fonts uitzetten](#custom-fonts-uitzetten)
+        * [Kleur uitzetten & kleurenblindheid instellen](#kleur-uitzetten---kleurenblindheid-instellen)
+        * [Muis/Trackpad werkt niet](#muis-trackpad-werkt-niet)
+        * [Breedband internet uitzetten](#breedband-internet-uitzetten)
+        * [Javascript (volledig)](#javascript--volledig-)
+        * [Cookies niet accepteren](#cookies-niet-accepteren)
+        * [localStorage doet het niet](#localstorage-doet-het-niet)
+      - [Firefox](#firefox)
+        * [Routing](#routing)
+        * [JavaScript Fetch](#javascript-fetch)
+        * [CSS](#css)
+        * [Flexbox](#flexbox)
+        * [Grid](#grid)
+        * [History state](#history-state)
+        * [Hover state](#hover-state)
+      - [Opera](#opera)
+        * [Routing](#routing-1)
+        * [JavaScript Fetch](#javascript-fetch-1)
+        * [CSS](#css-1)
+        * [Flexbox](#flexbox-1)
+        * [Grid](#grid-1)
+        * [History state](#history-state-1)
+        * [Hover state](#hover-state-1)
+      - [Safari](#safari)
+        * [Routing](#routing-2)
+        * [JavaScript Fetch](#javascript-fetch-2)
+        * [CSS](#css-2)
+        * [Flexbox](#flexbox-2)
+        * [Grid](#grid-2)
+        * [History state](#history-state-2)
+        * [Hover state](#hover-state-2)
+      - [Brave](#brave)
+        * [Routing](#routing-3)
+        * [JavaScript Fetch](#javascript-fetch-3)
+        * [CSS](#css-3)
+        * [Flexbox](#flexbox-3)
+        * [Grid](#grid-3)
+        * [History state](#history-state-3)
+        * [Hover state](#hover-state-3)
+  * [Screenreader](#screenreader)
+  * [Oplossingen en verbeteringen](#oplossingen-en-verbeteringen)
+    + [Voice](#voice)
+    + [Browser Support](#browser-support)
+      - [Verbeteringen](#verbeteringen)
+
 ### Doel van deze opdracht
 Het doel van de deze opdracht is leren hoe je een website kan testen in verschillende browsers en devices, en hoe een screenreader werkt.
 
@@ -96,23 +155,26 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like 
 
 Met de developer tools extensie is het mogelijk om op de volgende onderdelen te testen.
 
-* Afbeeldingen uitzetten
+##### Afbeeldingen uitzetten
 
 Als de afbeeldingen uit staan dan werkt de applicatie nog wel maar niet helemaal naar behoren. Het logo van de OBA en de mascotte worden nu weergeven met een can't find image icon en de beschrijving vanuit de alt text. Omdat ik plaatjes heb gebruikt als achtergrond om de onderwerpen toe te lichten zijn deze nu gewoon niet meer zichtbaar. Er is ook geen referentie naar dat er plaatjes hadden moeten staan.
 
 De applicatie moet dus nooit volledig afhankelijk zijn van afbeeldingen. Mits de context dat toelaat.
 
-* Custom fonts uitzetten
+##### Custom fonts uitzetten
+
 Het uitzetten van custom fonts gaat heel makkelijk in Chrome.
 Via de inspector ga je naar het tabje 'sources' en daar staat vervolgens alle bestanden die zijn ingeladen. Inclusief het css bestand. In het css bestand heb ik 1 keer font-family gedefinieerd naar 'avenir'. Dat is het font van de OBA. Als je deze uitzet dan rendert chrome automatisch de applicatie met een fallback font.
 
 Het is ook mogelijk om zelf een fallback font in te stellen. Dat doe je door na het eerste font dat je hebt ingesteld een tweede in te stellen. Zo maak je een vangnet voor als het eerste font om wat voor reden dan ook niet beschikbaar is voor de gebruiker van de applicatie.
 
-* Kleur uitzetten & kleurenblindheid instellen
+##### Kleur uitzetten & kleurenblindheid instellen
+
 Om te testen op kleurblindheid heb ik de chrome extensie colorblinding gedownload.
 [Colorblinding](https://chrome.google.com/webstore/detail/colorblinding/dgbgleaofjainknadoffbjkclicbbgaa/related)
 
 Met de extensie is het mogelijk om op de volgende soorten kleurblindheid te testen:
+
 * Normaal
 * Protanopia (Roodblindheid)
 * Deuteranopia (Groenblindheid)
@@ -131,7 +193,8 @@ Alleen voor iemand die totaal kleurenblind is is dat natuurlijk geen oplossing. 
 
 Semantiek en een hoog contrast zijn je grote vrienden bij het maken van toegankelijke websites voor kleurenblinden.
 
-* Muis/Trackpad werkt niet
+##### Muis/Trackpad werkt niet
+
 Als de muis of de trackpad niet werkt dan kan je gebruik maken van je toetsenbord of van voice control. 
 
 Ik heb mijn applicatie getest met het gebruik van alleen het toetsenbord. Dit is prima te doen omdat ik de juiste html tags heb gebruikt in mijn applicatie.
@@ -151,7 +214,8 @@ Wat ook fijn is is een skip navigatie link. Zo hoeft een gebruiker niet continu 
 Het is lastig om iets te optimaliseren voor zoveel diverse gebruikers. Maar het is wel een goede oefening om a11y in al je projecten te verwerken. En rekening te houden met het optimaliseren voor meerdere gebruikers. Zo codeer je uiteindelijk een stuk efficiënter en creëer je steeds minder problemen.
 
 
-* Breedband internet uitzetten
+##### Breedband internet uitzetten
+
 In Chrome kun je heel makkelijk een applicatie testen of deze werkt met langzaam internet. Om langzaam internet na te bootsen ga je naar Inspector > Network > Online > Slow 3G
 Dit heet ook wel network throtteling. Je bepaalt nu zelf hoeveel data de browser mag up en downloaden per seconde.
 
@@ -163,12 +227,14 @@ Je kunt daarom JavaScript het beste aan het einde van de body plaatsen of in de 
 
 Het is ook een goed idee om jouw applicatie te voorzien van loading states. Deze helpen bij het informeren van de gebruiker waar de applicatie op dat moment mee bezig is.
 
-* Javascript (volledig)
+##### Javascript (volledig)
+
 JavaScript is in Chrome uit te schakelen via de geavvanceerde instellingen. Wanneer je JavaScript op mijn applicatie uitschakelt dan werkt de applicatie niet meer naar behoren. Er wordt geen data opgehaald en het navigeren werkt ook niet meer. Het navigeren is namelijk volledig afhankelijk van routing.
 
 Een oplossing hiervoor is om JavaScript ALTIJD als progressive enhancement te gebruiken. En om zoveel mogelijk te schrijven met native HTML en CSS. Wanneer je applicatie zonder JavaScript werkt heb je namelijk een veel bredere support!
 
-* Cookies niet accepteren
+##### Cookies niet accepteren
+
 Bij mijn applicatie gebruik ik geen cookies. Om het gebruik van cookies te testen ben ik naar de volgende website gegaan:
 [https://www.telegraph.co.uk](https://www.telegraph.co.uk/travel/ski/articles/everything-you-need-to-know-about-late-season-skiing/)
 
@@ -182,7 +248,8 @@ Ik denk dat het een goede oplossing is van de telegraph door de gebruiker toegan
 
 Een andere oplossing was namelijk geweest om alle artikelen in een premium omgeving te plaatsen waar alleen mensen met login gegevens kunnen komen. Dat zou slecht zijn voor de vindbaarheid van de krant. En daarom hebben zij denk ik niet voor die oplossing gekozen.
 
-* localStorage doet het niet
+##### localStorage doet het niet
+
 Het uitschakelen van LocalStorage gaat gepaard met het uitschakelen van de cookies. Het is niet mogelijk in chrome om deze afzonderlijk van elkaar te blokkeren.
 
 In mijn applicatie maak ik geen gebruik van localstorage of cookies. Ik ben daarom naar de website van tweakers gegaan. Een website waar je normaal wordt doodgegooid met reclame.
@@ -205,77 +272,98 @@ Ik denk dat het goed is om altijd de gebruiker te informeren wat er gedaan wordt
 
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:74.0) Gecko/20100101 Firefox/74.0
 
-* Routing
+#####  Routing
+
 Routing werkt naar behoren. Je kunt op de anchor elementen navigeren. Maar je kunt ook weer terug via native browser functionaliteit.
 
-* JavaScript Fetch
+##### JavaScript Fetch
+
 De data wordt naar behoren opgehaald. Geen fouten opgemerkt en het gaat ook snel!
 
-* CSS
+##### CSS
+
 De opmaak verschilt nauwelijks tot niets in vergelijking met Chrome. De browser waar ik de applicatie in heb gebouwd.
 
-* Flexbox
+##### Flexbox
+
 Flexbox wordt ondersteund in firefox. De items in de navigatiebalk schalen mee en dat is exact wat er moet gebeuren.
 
-* Grid
+##### Grid
+
 Grid wordt ondersteund in firefox. De items in het gridschalen mee en dat is exact wat er moet gebeuren. Zie geen verschil met Chrome.
 
-* History state
+##### History state
+
 Terugnavigeren ondanks de routing met JavaScript doet het prima. 
 
-* Hover state
+##### Hover state
+
 Hover states werken naar behoren. CSS transities worden ondersteund en properties worden goed ingeladen en aangepast.
 
 #### Opera
 
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36 OPR/67.0.3575.79
 
-* Routing
+##### Routing
+
 Routing werkt niet als je terug wilt in opera. Dit moet dus opgelost worden.
 
-* JavaScript Fetch
+##### JavaScript Fetch
+
 Werkt goed
 
-* CSS
+##### CSS
+
 Geen vreemde dingen gezien. Ziet er goed uit.
 
-* Flexbox
+##### Flexbox
+
 Navigatie flext prima mee.
 
-* Grid
+##### Grid
+
 Grid schaalt ook goed mee.
 
-* History state
+##### History state
+
 Dit werkt dus niet zo goed.
 
-* Hover state
+##### Hover state
+
 Werkt prima.
 
 #### Safari
 
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15
 
-* Routing
+##### Routing
+
 Routing werkt half in safari. Naar pagina's toe navigeren werkt prima. Maar op het moment dat je terug wilt gaan via de native terug gaan functie van safari wordt de pagina vaak verkeerd laten zien. Je krijgt namelijk heel even de homepagina te zien. Maar deze schakelt al gauw weer terug naar de route waar je vandaan kwam
 
-* JavaScript Fetch
+##### JavaScript Fetch
+
 De data wordt naar behoren opgehaald. Geen fouten opgemerkt en het gaat ook snel!
 
-* CSS
+##### CSS
+
 Ik merk dat er in safari veel meer ruimte is tussen blok elementen.
 Wat opvallend is bij safari is dat de pagina rendering super smooth gaat! Het resizen van de viewport gaat zo soepel dat je de frames niet eens meer kan zien. Dat is bij Firefox en Chrome wel het geval.
 
-* Flexbox
+##### Flexbox
+
 Flexbox lijkt goed te werken in safari. De navigatie schaalt netjes mee bij het resizen.
 
-* Grid
+##### Grid
+
 Grid wordt ondersteund in safari. De items in het gridschalen mee en dat is exact wat er moet gebeuren. Zie geen verschil met Chrome.
 
-* History state
+##### History state
+
 Zoals beschreven bij routing: 
 "Maar op het moment dat je terug wilt gaan via de native terug gaan functie van safari wordt de pagina vaak verkeerd laten zien. Je krijgt namelijk heel even de homepagina te zien. Maar deze schakelt al gauw weer terug naar de route waar je vandaan kwam"
 
-* Hover state
+##### Hover state
+
 Hover states werken naar behoren. Geen verschil gezien met andere browsers.
 
 #### Brave
@@ -284,25 +372,32 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like 
 
 Brave is gebouwd op Chromium en dat merk ik ook bij het testen van mijn applicatie. De applicatie werkt zelfs een stuk sneller voor mijn gevoel dan bij native Chrome!
 
-* Routing
+##### Routing
+
 Perfect
 
-* JavaScript Fetch
+##### JavaScript Fetch
+
 Perfect
 
-* CSS
+##### CSS
+
 Perfect
 
-* Flexbox
+##### Flexbox
+
 Perfect
 
-* Grid
+##### Grid
+
 Perfect
 
-* History state
+##### History state
+
 Perfect
 
-* Hover state
+##### Hover state
+
 Perfect
 
 ## Screenreader
