@@ -97,7 +97,7 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like 
 Met de developer tools extensie is het mogelijk om op de volgende onderdelen te testen.
 
 * Afbeeldingen uitzetten
-Als de afbeeldingen uit staan dan werkt de applicatie nog wel maar niet helemaal naar behoren. Het logo van de OBA en de mascotte worden nu weergeven met een can't find image icon en de beschrijving vanuit de alt text. Omdat ik plaatjes heb gebruikt als achtergrond om de onderwerpen toe te lichten zijn deze nu gewoon niet meer zichtbaar. Er is ook geen referentie naar dat er plaatjes hadden moeten staan.
+- Als de afbeeldingen uit staan dan werkt de applicatie nog wel maar niet helemaal naar behoren. Het logo van de OBA en de mascotte worden nu weergeven met een can't find image icon en de beschrijving vanuit de alt text. Omdat ik plaatjes heb gebruikt als achtergrond om de onderwerpen toe te lichten zijn deze nu gewoon niet meer zichtbaar. Er is ook geen referentie naar dat er plaatjes hadden moeten staan.
 
 De applicatie moet dus nooit volledig afhankelijk zijn van afbeeldingen. Mits de context dat toelaat.
 
