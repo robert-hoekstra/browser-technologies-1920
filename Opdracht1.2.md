@@ -99,6 +99,8 @@ Met de developer tools extensie is het mogelijk om op de volgende onderdelen te 
 * Afbeeldingen uitzetten
 Als de afbeeldingen uit staan dan werkt de applicatie nog wel maar niet helemaal naar behoren. Het logo van de OBA en de mascotte worden nu weergeven met een can't find image icon en de beschrijving vanuit de alt text. Omdat ik plaatjes heb gebruikt als achtergrond om de onderwerpen toe te lichten zijn deze nu gewoon niet meer zichtbaar. Er is ook geen referentie naar dat er plaatjes hadden moeten staan.
 
+De applicatie moet dus nooit volledig afhankelijk zijn van afbeeldingen. Mits de context dat toelaat.
+
 * Custom fonts uitzetten
 Het uitzetten van custom fonts gaat heel makkelijk in Chrome.
 Via de inspector ga je naar het tabje 'sources' en daar staat vervolgens alle bestanden die zijn ingeladen. Inclusief het css bestand. In het css bestand heb ik 1 keer font-family gedefinieerd naar 'avenir'. Dat is het font van de OBA. Als je deze uitzet dan rendert chrome automatisch de applicatie met een fallback font.
