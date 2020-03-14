@@ -7,6 +7,16 @@ Het doel van de deze opdracht is leren hoe je een website kan testen in verschil
 ### Uitleg
 Pas Progressive enhancement toe op je OBA Web App. Test de 8 features uit opdracht 1.1 en verbeter de code waar mogelijk.
 
+Features:
+* Afbeeldingen uitzetten
+* Custom fonts uitzetten
+* Kleur uitzetten & kleurenblindheid instellen
+* Muis/Trackpad werkt niet
+* Breedband internet uitzetten
+* Javascript (volledig)
+* Cookies niet accepteren
+* localStorage doet het niet
+
 [OBA APP](https://robert-hoekstra.github.io/project-1-1920/#onderwerp-kiezen)
 
 Test je OBA opdracht op verschillende devices en browsers. Noteer welk device en welke browsers je hebt getest. Je moet je OBA opdracht ook testen op je computer in Chrome, Firefox en .
@@ -69,10 +79,129 @@ De onderdelen die ik ga testen zijn:
 * History state
 * Hover state
 
-#### Chrome
-In chrome werken alle bovenstaande punten. De applicatie is namelijk ontwikkeld met het oogpunt dat het moet werken in Chrome op een macbook.
+Edit: De 8 onderdelen die ik als basis getest had moeten worden:
+
+* Afbeeldingen uitzetten
+* Custom fonts uitzetten
+* Kleur uitzetten & kleurenblindheid instellen
+* Muis/Trackpad werkt niet
+* Breedband internet uitzetten
+* Javascript (volledig)
+* Cookies niet accepteren
+* localStorage doet het niet
+
+#### Chrome (8 features)
+
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36
+
+Met de developer tools extensie is het mogelijk om op de volgende onderdelen te testen.
+
+* Afbeeldingen uitzetten
+Als de afbeeldingen uit staan dan werkt de applicatie nog wel maar niet helemaal naar behoren. Het logo van de OBA en de mascotte worden nu weergeven met een can't find image icon en de beschrijving vanuit de alt text. Omdat ik plaatjes heb gebruikt als achtergrond om de onderwerpen toe te lichten zijn deze nu gewoon niet meer zichtbaar. Er is ook geen referentie naar dat er plaatjes hadden moeten staan.
+
+* Custom fonts uitzetten
+Het uitzetten van custom fonts gaat heel makkelijk in Chrome.
+Via de inspector ga je naar het tabje 'sources' en daar staat vervolgens alle bestanden die zijn ingeladen. Inclusief het css bestand. In het css bestand heb ik 1 keer font-family gedefinieerd naar 'avenir'. Dat is het font van de OBA. Als je deze uitzet dan rendert chrome automatisch de applicatie met een fallback font.
+
+Het is ook mogelijk om zelf een fallback font in te stellen. Dat doe je door na het eerste font dat je hebt ingesteld een tweede in te stellen. Zo maak je een vangnet voor als het eerste font om wat voor reden dan ook niet beschikbaar is voor de gebruiker van de applicatie.
+
+* Kleur uitzetten & kleurenblindheid instellen
+Om te testen op kleurblindheid heb ik de chrome extensie colorblinding gedownload.
+[Colorblinding](https://chrome.google.com/webstore/detail/colorblinding/dgbgleaofjainknadoffbjkclicbbgaa/related)
+
+Met de extensie is het mogelijk om op de volgende soorten kleurblindheid te testen:
+* Normaal
+* Protanopia (Roodblindheid)
+* Deuteranopia (Groenblindheid)
+* Tritanopia (Blauwblindheid)
+* Protanomaly (Roodzwak)
+* Deuteranomaly (Groenzwak)
+* Tritanomaly (Blauwzwak)
+* Achromatopsia (Geen kleuren)
+* Monochromacy (Alles blauwig)
+
+Mijn applicatie bevat niet al te veel kleur. Er wordt wel veel gebruik gemaakt van de rode kleur om aan te tonen dat het om een anchor tag gaat.
+
+Voor iemand die blind is voor deze kleur kan dat een probleem vormen. Je zou in dat geval altijd kunnen kiezen voor kleuren die een mengsel vormen van rood, blauw of groen. Op die manier zorg je er voor dat iemand die niet gevoelig is voor een van die 3 kleuren altijd nog de andere kleur in een object kan zien.
+
+Alleen voor iemand die totaal kleurenblind is is dat natuurlijk geen oplossing. Daarom moet je bovenop bovenstaande oplossing altijd er voor zorgen dat je voldoende contrast hebt op je website om objecten te onderscheiden. En dat je functionaliteit of informatie niet laat afhangen van de kleur. Hier geldt ook: gebruik kleur als progressive enhancement. Maar niet als fundering voor je html.
+
+Semantiek en een hoog contrast zijn je grote vrienden bij het maken van toegankelijke websites voor kleurenblinden.
+
+* Muis/Trackpad werkt niet
+Als de muis of de trackpad niet werkt dan kan je gebruik maken van je toetsenbord of van voice control. 
+
+Ik heb mijn applicatie getest met het gebruik van alleen het toetsenbord. Dit is prima te doen omdat ik de juiste html tags heb gebruikt in mijn applicatie.
+
+De elementen die automatisch focus meekrijgen in Chrome zijn:
+* Een A element met een href
+* Een input, select, textarea, button en file upload
+* Een iFrame (ook de focus elementen in het iFrame)
+* Elk element met een tabindex.
+
+Ik denk wel dat het belangrijk is om tegenwoordig bij het ontwikkelen van een website te optimaliseren voor muis, trackpad, voice, touch en screenreader. Er is een te grote diversiteit aan apparaten die gebruik maken van het web. 
+
+Om te optimaliseren voor gebruik van alleen toetsenbord navigatie kan je veel gebruik maken van tab indexes en focus elementen.
+
+Wat ook fijn is is een skip navigatie link. Zo hoeft een gebruiker niet continu door het hele navigatie menu heen.
+
+Het is lastig om iets te optimaliseren voor zoveel diverse gebruikers. Maar het is wel een goede oefening om a11y in al je projecten te verwerken. En rekening te houden met het optimaliseren voor meerdere gebruikers. Zo codeer je uiteindelijk een stuk efficiënter en creëer je steeds minder problemen.
+
+
+* Breedband internet uitzetten
+In Chrome kun je heel makkelijk een applicatie testen of deze werkt met langzaam internet. Om langzaam internet na te bootsen ga je naar Inspector > Network > Online > Slow 3G
+Dit heet ook wel network throtteling. Je bepaalt nu zelf hoeveel data de browser mag up en downloaden per seconde.
+
+Met langzaam internet merk je dat chrome automatisch alle html, css en javascript inlaadt. Zware plaatjes worden naderhand pas gerenderd. Dat heeft enerzijds een voordeel en een nadeel. Het voordeel is is dat de gebruiker snel gebruik kan maken van de applicatie. Het nadeel is dat belangerijke informatie verborgen kan blijven voor de gebruiker. Maar de opmaak van je website kan ook kapot gaan als deze afhankelijk is van de breedte van plaatjes. Ik raad daarom dan ook aan om een minimale breedte mee te geven aan de container waar het plaatje in staat.
+
+Verder is het verstandig om er voor te zorgen dat je website of applicatie werkt met standaard HTML en CSS. Dit wordt namelijk in die volgorde ingeladen. JavaScript is een taal die als laatste wordt ingeladen op basis van de plaatsing in de DOM.
+
+Je kunt daarom JavaScript het beste aan het einde van de body plaatsen of in de head met het 'defer' attribuut. Hierdoor rendert de browser JavaScript pas als de HTML en CSS ingeladen zijn. Zo kijkt de gebruiker niet lang naar een wit scherm maar kan die gelijk aan de slag!
+
+Het is ook een goed idee om jouw applicatie te voorzien van loading states. Deze helpen bij het informeren van de gebruiker waar de applicatie op dat moment mee bezig is.
+
+* Javascript (volledig)
+JavaScript is in Chrome uit te schakelen via de geavvanceerde instellingen. Wanneer je JavaScript op mijn applicatie uitschakelt dan werkt de applicatie niet meer naar behoren. Er wordt geen data opgehaald en het navigeren werkt ook niet meer. Het navigeren is namelijk volledig afhankelijk van routing.
+
+Een oplossing hiervoor is om JavaScript ALTIJD als progressive enhancement te gebruiken. En om zoveel mogelijk te schrijven met native HTML en CSS. Wanneer je applicatie zonder JavaScript werkt heb je namelijk een veel bredere support!
+
+* Cookies niet accepteren
+Bij mijn applicatie gebruik ik geen cookies. Om het gebruik van cookies te testen ben ik naar de volgende website gegaan:
+[https://www.telegraph.co.uk](https://www.telegraph.co.uk/travel/ski/articles/everything-you-need-to-know-about-late-season-skiing/)
+
+In de footer ontstaat gelijk al een melding om cookies te accepteren of in te stellen.
+
+Ik heb er voor gekozen om geen van beiden te kiezen en gewoon op de website verder te gaan met artikelen lezen en te navigeren. Dit werkt eigenlijk prima.
+
+Je merkt wel als je de cookies accepteert en als je een pagina refresht. Je een paar seconde de tijd hebt om een artikelen te lezen voordat jouw cookie geprobeert wordt uit te lezen. Wanneer de cookie is gevonden en uitgelezen ziet de website dat ik geen abbonement heb op de krant. En dan ontstaat er een 'Start your free trial' melding bonvenop het artikel en wordt het artikelen onleesbaar gemaakt.
+
+Ik denk dat het een goede oplossing is van de telegraph door de gebruiker toegang te geven tot het instellen van de cookies en tot het accepteren (en negeren) van de cookies.
+
+Een andere oplossing was namelijk geweest om alle artikelen in een premium omgeving te plaatsen waar alleen mensen met login gegevens kunnen komen. Dat zou slecht zijn voor de vindbaarheid van de krant. En daarom hebben zij denk ik niet voor die oplossing gekozen.
+
+* localStorage doet het niet
+Het uitschakelen van LocalStorage gaat gepaard met het uitschakelen van de cookies. Het is niet mogelijk in chrome om deze afzonderlijk van elkaar te blokkeren.
+
+In mijn applicatie maak ik geen gebruik van localstorage of cookies. Ik ben daarom naar de website van tweakers gegaan. Een website waar je normaal wordt doodgegooid met reclame.
+
+[Tweakers](https://Tweakers.net)
+
+Lang verhaal kort: Deze website doet niks zonder de cookies te accepteren. Wanneer je de cookies probeert te accepteren (maar deze via de instellingen weigert) kom je op een pagina terecht die een foutmelding geeft. Tweakers is dus onbruikbaar zonder cookies.
+
+[Skyscanner](https://www.skyscanner.nl)
+Skyscanner is een website die wel te gebruiken is zonder cookies. Je krijgt alleen bij elke keer dat je gaat navigeren de optie om weer de cookies te accepteren. Wanneer je de cookies 'accepteert' gebeurt er vrij weinig en kan je verder gaan met waar je bezig was op de website.
+
+Eigenlijk best handig! Zo kun je altijd voor de laagste prijs vliegen zonder dat de prijs is afgestemd op jouw cookies.
+
+Maar nee! Als je doorgaat met het boeken van een ticket bij bijvoorbeeld vueling.com dan houdt de pret op en wordt je geweigerd omdat je geen cookies accepteert.
+
+Ik denk dat het goed is om altijd de gebruiker te informeren wat er gedaan wordt met cookies. Maar ook wat er gebeurd als je cookies weigert. Tweakers doet dat bijvoorbeeld heel goed. Het geeft je tips over waar waarschijnlijk een probleem ligt. Skyscanner geeft je deze melding helemaal niet en dan gaat de browser pas op z'n nek als je wordt geredirect naar een ander domein die geen ondersteuning biedt voor cookieloze computers.
+
 
 #### Firefox
+
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:74.0) Gecko/20100101 Firefox/74.0
+
 * Routing
 Routing werkt naar behoren. Je kunt op de anchor elementen navigeren. Maar je kunt ook weer terug via native browser functionaliteit.
 
@@ -95,6 +224,9 @@ Terugnavigeren ondanks de routing met JavaScript doet het prima.
 Hover states werken naar behoren. CSS transities worden ondersteund en properties worden goed ingeladen en aangepast.
 
 #### Opera
+
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36 OPR/67.0.3575.79
+
 * Routing
 Routing werkt niet als je terug wilt in opera. Dit moet dus opgelost worden.
 
@@ -116,8 +248,10 @@ Dit werkt dus niet zo goed.
 * Hover state
 Werkt prima.
 
-
 #### Safari
+
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15
+
 * Routing
 Routing werkt half in safari. Naar pagina's toe navigeren werkt prima. Maar op het moment dat je terug wilt gaan via de native terug gaan functie van safari wordt de pagina vaak verkeerd laten zien. Je krijgt namelijk heel even de homepagina te zien. Maar deze schakelt al gauw weer terug naar de route waar je vandaan kwam
 
@@ -142,6 +276,9 @@ Zoals beschreven bij routing:
 Hover states werken naar behoren. Geen verschil gezien met andere browsers.
 
 #### Brave
+
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36
+
 Brave is gebouwd op Chromium en dat merk ik ook bij het testen van mijn applicatie. De applicatie werkt zelfs een stuk sneller voor mijn gevoel dan bij native Chrome!
 
 * Routing
@@ -164,9 +301,6 @@ Perfect
 
 * Hover state
 Perfect
-
-## Oplossingen en verbeteringen
-
 
 ## Screenreader
 Ik heb mijn applicatie laten oplezen door gebruik te maken van VoiceOver dat bij Catalina zit op de Macbook Pro.
