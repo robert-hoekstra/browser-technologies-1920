@@ -1,11 +1,27 @@
 var express = require('express');
 var router = express.Router();
-const fetch = require('node-fetch');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('layouts/index', { title: 'Booky' });
+  res.render('layouts/index', { title: 'Nerdy T-Shirts | Begin' });
 });
+
+router.get('/start', function(req, res, next) {
+  res.render('layouts/instructions', { title: 'Nerdy T-Shirts | Instructions' });
+});
+
+router.get('/help', function(req, res, next) {
+  res.render('layouts/instructions', { title: 'Nerdy T-Shirts | Instructions' });
+});
+
+router.get('/generator', function(req, res, next) {
+  res.render('layouts/makeshirt', { title: 'Nerdy T-Shirts | Generator' });
+});
+
+router.get('/preview', function(req, res, next) {
+  res.render('layouts/endscreen', { title: 'Nerdy T-Shirts | Generator',  color: req.query.color, text: req.query.text, image: req.query.image });
+});
+
 
 /* GET detail page. */
 // router.get('/:stringparam', function(req, res, next) {
