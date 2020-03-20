@@ -19,7 +19,7 @@ router.get('/generator', function(req, res, next) {
 });
 
 router.get('/preview', function(req, res, next) {
-  res.render('layouts/endscreen', { title: 'Nerdy T-Shirts | Generator',  color: req.query.color, text: req.query.text, image: req.query.image });
+  res.render('layouts/endscreen', { title: 'Nerdy T-Shirts | Generator',  color: req.query.color, text: req.query.text, image: req.query.image, url:req.protocol + '://' + req.get('host') + req.originalUrl });
 });
 
 
