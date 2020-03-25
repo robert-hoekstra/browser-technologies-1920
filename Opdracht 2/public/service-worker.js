@@ -1,7 +1,7 @@
 const cacheName = 'cache-v1';
 const precacheResources = [
   '/',
-  '/stylesheets/main.css',
+  // '/stylesheets/main.css',
   '/help',
 ];
 
