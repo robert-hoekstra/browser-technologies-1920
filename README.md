@@ -8,8 +8,9 @@
 * Hoe deploy je gemakkelijk met heroku als je een folder structuur heb zoals ik?
 
 ## Nerdy Shirt Creator!
-
 Een applicatie om super nerdy t-shirts te ontwerpen!
+
+### Inhoudsopgave
 
 ### Case
 De gebruiker kan via een HTML5 form een t-shirt ontwerpen. Dit shirt kan vervolgens uitgeprint worden of opgeslagen als plaatje.
