@@ -141,13 +141,21 @@ Ook hier geldt : Support je het? gebruik het dan! Support je het niet? Gebruik h
 
 ### Tests
 
+##### Lighthouse
+Lighthouse is een audittool van Chrome die de website test op UX, A11Y, SEO en performance.
+De audit is [Hier](https://github.com/robert-hoekstra/browser-technologies-1920/blob/master/Lighthouse.pdf) te vinden.
+
 ##### CanIUse.com
 Can I use is een website waar je grotendeels alle webtechnologieen kunt checken. 
 De website ik voor bijna alle html, css en javascript elementen gebruikt. Zo kan ik per onderdeel zien hoe de ondersteuning is tussen alle browsers.
 
 ##### Try.powermapper
 Powermapper is een tool die de hele website met interne links controleerd op UX, A11Y en performance issues.
-De audit is [hier]() te vinden
+De audit is [hier](https://github.com/robert-hoekstra/browser-technologies-1920/blob/master/powermapper.pdf) te vinden.
+
+De punten zullen in de toekomst verwerkt worden.
+
+
 ##### 8 Features
 
 * Afbeeldingen uitzetten
