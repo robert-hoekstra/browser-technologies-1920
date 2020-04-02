@@ -138,6 +138,56 @@ In CSS werkt het volgende:
 
 Ook hier geldt : Support je het? gebruik het dan! Support je het niet? Gebruik het dan niet.
 
+
+### Tests
+
+##### CanIUse.com
+Can I use is een website waar je grotendeels alle webtechnologieen kunt checken. 
+De website ik voor bijna alle html, css en javascript elementen gebruikt. Zo kan ik per onderdeel zien hoe de ondersteuning is tussen alle browsers.
+
+##### Try.powermapper
+Powermapper is een tool die de hele website met interne links controleerd op UX, A11Y en performance issues.
+De audit is [hier]() te vinden
+##### 8 Features
+
+* Afbeeldingen uitzetten
+
+Als je de afbeeldingen uitzet binnen de applicatie dan treed er eigenlijk een grote fout op. Je ziet namelijk de preview van jouw shirt niet meer.
+Daarom heb ik er voor gekozen om de beschrijving van het shirt te laten zien. Zodat mensen zonder afbeeldingen alsnog een idee hebben wat ze hebben samengesteld.
+
+* Custom fonts uitzetten
+
+Als je de custom fonts uitzet of niet ondersteund dan is dat geen probleem. In CSS heb ik een fallback font gedefinieerd welke door elk device en browsers gerendered kan worden.
+
+* Kleur uitzetten & kleurenblindheid instellen
+
+Met de colorblinding extensiontool in Chrome heb ik de website op kleur en contrast getest. De website bevat naar mijn mening voldoende contrast in elke vorm van kleurenblindheid. Functionaliteit en gedrag is nog steeds goed te onderscheiden.
+
+Echter laat de test van try.powermap.com iets anders zien. En wordt het als usabillity als kritiek punt benoemd. Daar zal ik naar oplossingen moeten zoeken om het contrast nog meer aanwezig te maken. Het vergroten van de borders lijkt mij een gepaste oplsosing.
+
+Maar ook de fontkleur op de achtergrondkleuren kunnen beter
+
+* Muis/Trackpad werkt niet
+
+De website is volledig te gebruiken zonder muis want er is gebruikt gemaakt van de juiste HTML5 elementen. Met Tab, Shift+Tab, Spatie, CMD+C & Enter komt men door de hele applicatie heen.
+
+* Breedband internet uitzetten
+ 
+ Via de developer tools in Chrome heb ik de applicatie getest met 'slow 3g connection'. De website wordt eigenlijk goed gerendered. Wel zit er een korte pauze tussen elke request in naar de volgende pagina. Dit probleem zou ik kunnen tackelen met een loading state die aangeeft dat er een pagina aankomt. In principe zit dit natuurlijk als ingebakken in de browser.
+
+* Javascript (volledig) uitzetten
+Als JavaScript uit staat dan kun je nog steeds de applicatie gebruiken. Wel is het zo dat een paar functionaliteiten zoals het vergroten van font-size. Of het uitprinten of snel kopieren van de persoonlijke link niet meer werkt. 
+
+Deze knoppen worden daarom ook alleen maar getoond wanneer JavaScript aan staat in de ideale situatie.
+
+* Cookies niet accepteren
+De applicatie maakt geen gebruik van cookies.
+
+* localStorage doet het niet
+De applicatie maakt geen gebruik van LocalStorage.
+
+
+
 ### Nice to haves
 * Preview terwijl je het form invult
 * Selectie van opties in form weergeven met een kleur ipv tekst
