@@ -221,10 +221,12 @@ Zorg ervoor dat npm en node geinstalleerd is op jouw device!
 [npm](https://docs.npmjs.com/cli/install)
 
 
-Student kan de core functionaliteit van een use case doorgronden
-Toegankelijkheid: De user experience is goed
-Readme: In de beschrijving van het project staat een probleemdefinitie, hoe het probleem is opgelost en een uitleg van de code.
-Student kan uitleggen wat Progressive enhancement is. 
-Student laat zien hoe Progressive Enhancement toe te passen in Web Development
-Student kan uitleggen wat Feature detection is.
-Student laat zien hoe Feature Detection kan worden toegepast in Web Development
+## Na Feedback van PPK Vrijdag 3 April
+### Changes
+* Modal wordt alleen getoond mits JavaScript aan, en offline verbinding
+* JavaScript DOM elementen worden alleen geschreven als JavaScript aan staat
+* Er zijn geen 'hidden' html elementen meer vanwege de transitie van CSS naar JavaScript
+* Form element bevat nu kleuren en afbeeldingen. Input types en afbeeldingen die worden ingeladen.
+* Preview bevat nu uitgelijnde afbeelding en tekst op shirt
+* Nieuwe print stylesheet zodat alleen het shirt wordt uitgeprint
+* Installeren van PWA banner alleen zichtbaar met JavaScript (stond nog hardcoded in een handlebars layout :sad: )
