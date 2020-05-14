@@ -117,6 +117,24 @@ if ('functionaliteit' in navigator) {
 
 ```
 
+
+Ik gebruik deze zelfde techniek voor mijn service worker:
+
+```javascript
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => {
+        console.log('Service worker registered! 😎', reg);
+      })
+      .catch(err => {
+        console.log('😥 Service worker registration failed: ', err);
+      });
+  });
+}
+
+```
+
 Wat er staat is als de functionaliteit er is, dan voer je het stukje code uit tussen de curly brackets.
 
 Met CSS kunnen wij precies hetzelfde doen.
@@ -269,7 +287,12 @@ Fallbacks zijn zoals de naam doet vermoeden een soort vangnet voor als een bepaa
 
 Uiteindelijk heeft een browser in de meeste gevallen een default fallback. Als een browser namelijk een bepaalt onderdeel niet begrijpt wordt er vaak een default font, error of styling toegepast. Of helemaal niet. Juist voor dat laatste is het handig om wel fallbacks te gaan gebruiken.
 
-### Slotwoord
+### Toepassing
+Ik heb veel meer gebruik gemaakt van fallbacks dan feature detections omdat ik uitgebreid onderzoek heb gedaan naar alle html, css en javascript elementen die ik heb toegepast. Ik heb namelijk technieken gebruikt die vrijwel door elke browser ondersteund worden. 
+
+Progressive enhancement is wel een methodiek waar ik 100% achtersta en wat ik altijd probeer toe te passen in mijn producten.
+
+## Slotwoord
 Ik denk dat het een goede manier van ontwikkelen is door altijd met de Progressive Enhancement methodiek te ontwerpen. En niet met graceful degradation. Datzelfde geldt voor met onderdelen werken die zoveel mogelijk worden ondersteund.
 
 Dat geldt natuurlijk niet voor elk project. Sommige projecten worden gemaakt voor een hele kleine groep gebruikers. Of een groep die helemaal niet divers is. Het gebruik van frameworks zorgt er voor dat html css en js steeds meer door elkaar gebruikt worden (en van elkaar afhankelijk worden). Voor sommige projecten is het een uitkomst om met frameworks te werken gezien de community die erbij komt kijken en de productiviteit die te behalen valt. Echter denk ik dat het voor sommige opdrachten niet verkeerd is om gewoon een keer good ol' Progressive Enhancement toe te passen!
