@@ -230,3 +230,46 @@ Zorg ervoor dat npm en node geinstalleerd is op jouw device!
 * Preview bevat nu uitgelijnde afbeelding en tekst op shirt
 * Nieuwe print stylesheet zodat alleen het shirt wordt uitgeprint
 * Installeren van PWA banner alleen zichtbaar met JavaScript (stond nog hardcoded in een handlebars layout :sad: )
+
+# Conclusie
+In dit gedeelte van de readme ga ik wat meer in op het vak Browser Technologies en niet zo zeer op de inhoud van het product
+
+## Browser Technologies
+Browser Technologies is een vak waar ik ontzettend van genoten heb. Vreemde maar ook vervelende bugs komen naar boven tijdens dit vak vanwege alle browsers die er zijn.
+Het vak heeft mij laten zien dat het not done is om grote getallen van gebruikers niet in het ontwerp mee te nemen, omdat 'ze er niet toedoen'.
+
+Super interessante talks zijn er gegeven door zowel Koop als Peter-Paul. Vooral het testen en onderzoeken op verschillende devices en browsers is iets wat ik erg leuk vond aan dit vak. Helaas door het Corona virus was het niet meer mogelijk om dit vaker te doen gezien de Hogeschool van Amsterdam dicht is.
+
+## Leerdoelen
+In dit deel van de conclusie behandel ik de leerdoelen van het vak Browser Technologies.
+
+### Progressive Enhancement
+Progressive Enhancement is een onderwerp waar ik al vaker mee in aanraking ben geweest bij de opleiding CMD. Het is een manier van ontwerpen waarin je bepaalde features alleen toevoegt om de UX of de performance van een product te verbeteren. Het kan dus niet de bedoeling zijn dat de applicatie niet meer te begrijpen of gebruiken is als deze feature wegvalt.
+
+In de webdesign betekent dat voor mij dat een product eerst volledig in semantisch HTML geschreven moet worden. Met elementen die door elke browser worden ondersteund.
+
+Wanneer de functionaliteiten en informatie goed worden weergeven is het tijd om CSS toe te voegen. Dit vormt de 2e laag op de 1e laag. Ook binnen de CSS vind ik dat je zoveel mogelijk gebruik moet maken van properties die door zo veel mogelijk gebruikers ondersteund worden.
+
+Als de CSS laag is toegevoegd is het tijd om de interactie toe te voegen aan het product. Deze interactie voegen wij toe met JavaScript. En dit is tevens de 3e laag.
+
+De lagen omschrijf ik als:
+* Informatie
+* Vormgeving
+* Interactie
+
+Door bovenstaande methodiek toe te passen in het ontwikkel en ontwerpproces zorg je er voor dat je producten ontwikkeld die door een grote groep ervaren kunnen worden.
+
+### Feature Detection
+Feature detection is een methodiek in de webdesign waarbij je gaat kijken of een bepaalde feature aanwezig is in een browser. Als deze feature ondersteund wordt dan gebruikt de browser die. Zo niet dan kan er gebruik worden gemaakt van een fallback.
+
+Feature detection is ontzettend handig als je moet developpen voor een groot publiek. Als ik er een stuk handiger en ervarender in wordt wil ik eigenlijk al mijn producten met feature detects en fallbacks schrijven. Zodat ik voor zoveel mogelijk mensen een goed product kan presenteren.
+
+### Fallbacks
+Fallbacks zijn zoals de naam doet vermoeden een soort vangnet voor als een bepaalt onderdeel in je code niet ondersteunt wordt door de browser of device. Met een fallback zorg je er voor dat er wanneer iets niet ondersteund of herkend wordt door een browser, er een (vaak beter ondersteunde) element, functie of property wordt gebruikt die wel door de browser gebruikt kan worden.
+
+Uiteindelijk heeft een browser in de meeste gevallen een default fallback. Als een browser namelijk een bepaalt onderdeel niet begrijpt wordt er vaak een default font, error of styling toegepast. Of helemaal niet. Juist voor dat laatste is het handig om wel fallbacks te gaan gebruiken.
+
+### Slotwoord
+Ik denk dat het een goede manier van ontwikkelen is door altijd met de Progressive Enhancement methodiek te ontwerpen. En niet met graceful degradation. Datzelfde geldt voor met onderdelen werken die zoveel mogelijk worden ondersteund.
+
+Dat geldt natuurlijk niet voor elk project. Sommige projecten worden gemaakt voor een hele kleine groep gebruikers. Of een groep die helemaal niet divers is. Het gebruik van frameworks zorgt er voor dat html css en js steeds meer door elkaar gebruikt worden (en van elkaar afhankelijk worden). Voor sommige projecten is het een uitkomst om met frameworks te werken gezien de community die erbij komt kijken en de productiviteit die te behalen valt. Echter denk ik dat het voor sommige opdrachten niet verkeerd is om gewoon een keer good ol' Progressive Enhancement toe te passen!
