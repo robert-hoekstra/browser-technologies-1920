@@ -29,6 +29,7 @@ Een applicatie om super nerdy t-shirts te ontwerpen!
     + [Live on Heroku](#live-on-heroku)
     + [Lokaal op eigen machine](#lokaal-op-eigen-machine)
     + [Node & NPM Installeren](#node---npm-installeren)
+  *[Conclusie](#conclusie)
 
 ### Case
 De gebruiker kan via een HTML5 form een t-shirt ontwerpen. Dit shirt kan vervolgens uitgeprint worden of opgeslagen als plaatje.
