@@ -248,6 +248,8 @@ Zorg ervoor dat npm en node geinstalleerd is op jouw device!
 * Preview bevat nu uitgelijnde afbeelding en tekst op shirt
 * Nieuwe print stylesheet zodat alleen het shirt wordt uitgeprint
 * Installeren van PWA banner alleen zichtbaar met JavaScript (stond nog hardcoded in een handlebars layout :sad: )
+* Conclusie toegevoegd aan readme
+* Code voorbeelden toegevoegd aan readme
 
 # Conclusie
 In dit gedeelte van de readme ga ik wat meer in op het vak Browser Technologies en niet zo zeer op de inhoud van het product
@@ -293,6 +295,6 @@ Ik heb veel meer gebruik gemaakt van fallbacks dan feature detections omdat ik u
 Progressive enhancement is wel een methodiek waar ik 100% achtersta en wat ik altijd probeer toe te passen in mijn producten.
 
 ## Slotwoord
-Ik denk dat het een goede manier van ontwikkelen is door altijd met de Progressive Enhancement methodiek te ontwerpen. En niet met graceful degradation. Datzelfde geldt voor met onderdelen werken die zoveel mogelijk worden ondersteund.
+Ik denk dat het een goede manier van ontwikkelen is door altijd met de Progressive Enhancement methodiek te ontwerpen. En niet met graceful degradation. GD wilt zeggen dat je een product eerst bouwt zoals je wilt dat het product is. En vervolgens ga je vangnetten schrijven voor functionaliteiten die niet goed worden ondersteund. Of je laat ze zelfs buiten beschouwing.
 
 Dat geldt natuurlijk niet voor elk project. Sommige projecten worden gemaakt voor een hele kleine groep gebruikers. Of een groep die helemaal niet divers is. Het gebruik van frameworks zorgt er voor dat html css en js steeds meer door elkaar gebruikt worden (en van elkaar afhankelijk worden). Voor sommige projecten is het een uitkomst om met frameworks te werken gezien de community die erbij komt kijken en de productiviteit die te behalen valt. Echter denk ik dat het voor sommige opdrachten niet verkeerd is om gewoon een keer good ol' Progressive Enhancement toe te passen!
